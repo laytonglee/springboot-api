@@ -24,7 +24,7 @@ public class CourseEntity {
     @Column(name="credits", nullable = false)
     private int credits;
 
-    @Column(name="email", nullable = false)
+    @Column(name="description", nullable = false)
     private String description;
 
 }
