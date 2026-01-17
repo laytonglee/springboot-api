@@ -1,6 +1,7 @@
 package kh.com.laytong.demo.Student.entity;
 
 import jakarta.persistence.*;
+import kh.com.laytong.demo.Department.entity.DepartmentEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,5 +32,9 @@ public class StudentEntity {
 
     @Column(name = "enrollment_date", nullable = false)
     private LocalDate enrollmentDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id")
+    private DepartmentEntity departmentEntity;
 
 }
