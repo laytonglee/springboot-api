@@ -30,5 +30,11 @@ public class StudentController {
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
+    @GetMapping("/departments/{departmentId}")
+    public ResponseEntity<List<ResponseStudent>> getByDepartment (@PathVariable Long departmentId){
+        List<ResponseStudent> result = studentService.queryByDepartmentId(departmentId);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
 }
 

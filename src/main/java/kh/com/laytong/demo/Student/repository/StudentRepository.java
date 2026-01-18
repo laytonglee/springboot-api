@@ -8,4 +8,5 @@ import java.util.List;
 public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
 
     List<StudentEntity> findAllByEmail(String email);
+    List<StudentEntity> findAllByDepartmentEntity_Id(Long departmentId);
 }

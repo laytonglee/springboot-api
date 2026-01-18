@@ -62,4 +62,12 @@ public class StudentService {
         //            return res;
         return students.stream().map(ResponseStudent::fromEntity).toList();
     }
+
+
+    public List<ResponseStudent> queryByDepartmentId (Long departmentId){
+        List<StudentEntity> results = studentRepository.findAllByDepartmentEntity_Id(departmentId);
+
+        return results.stream().map(ResponseStudent::fromEntity).toList();
+
+    }
 }
